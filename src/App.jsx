@@ -1,5 +1,10 @@
 import { useState } from "react";
-import First from "./First.jsx";
+/*
+import {Personal} from "./Personal.jsx";
+import {Education} from "./Education.jsx";
+import {Experience} from "./Experience.jsx";
+import {FullCV} from "./FullCV.jsx";
+*/
 
 function App() {
 	let [state, setState] = useState({
