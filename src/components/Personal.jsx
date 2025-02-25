@@ -17,6 +17,10 @@ function Change({ state, setState }) {
 	}
 }
 
+function valueChange(e) {
+	console.log(e.target.parentNode.parentNode.classList[0]);
+}
+
 export function Personal({ state, setState }) {
 	return (
 		<div className="card">
@@ -24,18 +28,18 @@ export function Personal({ state, setState }) {
 				<h2>Personal Details</h2>
 				<button> + </button>
 			</div>
-			<div className="cardContents">
+			<div className="personal cardContents">
 				<div>
 					<label htmlFor="name">Full Name</label>
-					<input type="text" id="name"></input>
+					<input onChange={valueChange} type="text" id="name" />
 				</div>
 				<div>
 					<label htmlFor="email">Email</label>
-					<input type="email" id="email"></input>
+					<input onChange={valueChange} type="email" id="email" />
 				</div>
 				<div>
 					<label htmlFor="number">Phone Number</label>
-					<input type="tel" id="name"></input>
+					<input onChange={valueChange} type="tel" id="tel" />
 				</div>
 			</div>
 		</div>
