@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Personal } from "./Personal.jsx";
-/*
 
+/*
+import "../styles.css";
 import {Education} from "./Education.jsx";
 import {Experience} from "./Experience.jsx";
 import {FullCV} from "./FullCV.jsx";
@@ -16,9 +17,10 @@ function App() {
 
 	return (
 		<>
-			<div className="left">Hello</div>
+			<div className="left">
+				<Personal state={state} setState={setState} />
+			</div>
 			<div className="right">Bye</div>
-			<Personal state={state} setState={setState} />
 		</>
 	);
 }
