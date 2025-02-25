@@ -26,9 +26,11 @@ function valueChange(e, state, setState) {
 	tempState[parentNode][target] = targetValue;
 	console.log(tempState);
 	setState((s) => (s = tempState));
+	console.log(state);
 }
 
 export function Personal({ state, setState }) {
+	console.log(state.personal);
 	return (
 		<div className="card">
 			<div className="cardHeader">
@@ -44,6 +46,7 @@ export function Personal({ state, setState }) {
 						}}
 						type="text"
 						id="name"
+						value={state.personal.name}
 					/>
 				</div>
 				<div>
@@ -54,6 +57,7 @@ export function Personal({ state, setState }) {
 						}}
 						type="email"
 						id="email"
+						value={state.personal.email}
 					/>
 				</div>
 				<div>
@@ -64,6 +68,7 @@ export function Personal({ state, setState }) {
 						}}
 						type="tel"
 						id="tel"
+						value={state.personal.tel}
 					/>
 				</div>
 			</div>
