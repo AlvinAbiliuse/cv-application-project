@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Personal } from "./Personal.jsx";
 
+import "../styles/leftStyles.css";
 /*
-import "../styles.css";
 import {Education} from "./Education.jsx";
 import {Experience} from "./Experience.jsx";
 import {FullCV} from "./FullCV.jsx";
