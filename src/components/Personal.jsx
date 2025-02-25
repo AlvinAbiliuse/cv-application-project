@@ -25,6 +25,7 @@ function valueChange(e, state, setState) {
 	let tempState = state;
 	tempState[parentNode][target] = targetValue;
 	console.log(tempState);
+	setState((s) => (s = tempState));
 }
 
 export function Personal({ state, setState }) {
