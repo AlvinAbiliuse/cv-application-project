@@ -1,3 +1,7 @@
 export default function First({ s, setS }) {
-	return <button>Click Me: {s}</button>;
+	function click() {
+		setS((a) => (a = a + 1));
+		console.log(s);
+	}
+	return <button onClick={click}>Click Me: {s}</button>;
 }
