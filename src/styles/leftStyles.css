@@ -1,0 +1,14 @@
+
+.card {
+	border: 1px solid black;
+}
+
+.cardHeader {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	button {
+		height: 30px;
+		width: 30px;
+	}
+}
