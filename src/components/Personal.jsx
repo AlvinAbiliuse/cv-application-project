@@ -1,34 +1,15 @@
-function Change({ state, setState }) {
-	console.log(state);
-	if (state["personal"]["show"]) {
-		console.log(state);
-		let c = state;
-		c["personal"]["show"] = false;
-		setState(c);
-		console.log(state);
-		return <button>+</button>;
-	} else {
-		console.log(state);
-		let c = state;
-		c["personal"]["show"] = true;
-		setState(c);
-		console.log(state);
-		return <button>-</button>;
-	}
-}
-
-function valueChange(e, currentState, setS) {
-	let parentNode = e.target.parentNode.parentNode.classList[0];
-	let target = e.target.id;
-	let targetValue = e.target.value;
-
-	let tempState = currentState;
-	tempState[parentNode][target] = targetValue;
-	console.log(tempState);
-	setS((s) => (s = tempState));
-}
-
 export function Personal({ state, setState }) {
+	function valueChange(e) {
+		let parentNode = e.target.parentNode.parentNode.classList[0];
+		let target = e.target.id;
+		let targetValue = e.target.value;
+
+		let tempState = state;
+		tempState[parentNode][target] = targetValue;
+		console.log(tempState);
+		setState(tempState);
+	}
+
 	return (
 		<div className="card">
 			<div className="cardHeader">
@@ -38,21 +19,12 @@ export function Personal({ state, setState }) {
 			<div className="personal cardContents">
 				<div>
 					<label htmlFor="name">Full Name</label>
-					<input
-						type="text"
-						id="name"
-						value={state["personal"]["name"]}
-						onChange={(e) => {
-							valueChange(e, state, setState);
-						}}
-					/>
+					<input type="text" id="name" value={state["personal"]["name"]} />
 				</div>
 				<div>
 					<label htmlFor="email">Email</label>
 					<input
-						onChange={(e) => {
-							valueChange(e, state, setState);
-						}}
+						onChange={valueChange}
 						type="email"
 						id="email"
 						value={state["personal"]["email"]}
@@ -61,9 +33,7 @@ export function Personal({ state, setState }) {
 				<div>
 					<label htmlFor="number">Phone Number</label>
 					<input
-						onChange={(e) => {
-							valueChange(e, state, setState);
-						}}
+						onChange={valueChange}
 						type="tel"
 						id="tel"
 						value={state["personal"]["tel"]}
