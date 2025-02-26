@@ -33,15 +33,13 @@ const example = {
 };
 
 function Education({ state }) {
-	state.education.cards.forEach((i) => {
-		console.log(i.name);
+	let cards = state.education.cards;
+	return cards.map((i) => {
 		return (
-			<>
-				<div className="card">
-					<h2>Education: {i.name}</h2>
-					<p>Degree: {i.degree}</p>
-				</div>
-			</>
+			<div className="card">
+				<h2>Education: {i.name}</h2>
+				<p>Degree: {i.degree}</p>
+			</div>
 		);
 	});
 }
