@@ -17,20 +17,18 @@ function Change({ state, setState }) {
 	}
 }
 
-function valueChange(e, state, setState) {
+function valueChange(e, currentState, setS) {
 	let parentNode = e.target.parentNode.parentNode.classList[0];
 	let target = e.target.id;
 	let targetValue = e.target.value;
 
-	let tempState = state;
+	let tempState = currentState;
 	tempState[parentNode][target] = targetValue;
 	console.log(tempState);
-	setState((s) => (s = tempState));
-	console.log(state);
+	setS((s) => (s = tempState));
 }
 
 export function Personal({ state, setState }) {
-	console.log(state.personal);
 	return (
 		<div className="card">
 			<div className="cardHeader">
@@ -46,7 +44,7 @@ export function Personal({ state, setState }) {
 						}}
 						type="text"
 						id="name"
-						value={state.personal.name}
+						value={state["personal"]["name"]}
 					/>
 				</div>
 				<div>
