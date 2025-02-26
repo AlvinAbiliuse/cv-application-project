@@ -33,12 +33,15 @@ const example = {
 };
 
 function Education({ state }) {
-	state.education.cards.forEach(() => {
+	state.education.cards.forEach((i) => {
+		console.log(i.name);
 		return (
-			<div className="card">
-				<h2>Education: {state.education.cards.name}</h2>
-				<p>Degree: {state.education.cards.degree}</p>
-			</div>
+			<>
+				<div className="card">
+					<h2>Education: {i.name}</h2>
+					<p>Degree: {i.degree}</p>
+				</div>
+			</>
 		);
 	});
 }
@@ -67,16 +70,20 @@ function App() {
 				<Personal state={state} setState={setState} />
 			</div>
 			<div className="right">
-				<p>
-					Name: <span>{state.personal.name}</span>
-				</p>
-				<p>
-					Email: <span>{state.personal.email}</span>
-				</p>
-				<p>
-					Phone Number: <span>{state.personal.tel}</span>
-				</p>
-				<Education state={state} />
+				<div className="personalDisplay">
+					<p>
+						Name: <span>{state.personal.name}</span>
+					</p>
+					<p>
+						Email: <span>{state.personal.email}</span>
+					</p>
+					<p>
+						Phone Number: <span>{state.personal.tel}</span>
+					</p>
+				</div>
+				<div className="educationDisplay">
+					<Education state={state} />
+				</div>
 			</div>
 		</>
 	);
