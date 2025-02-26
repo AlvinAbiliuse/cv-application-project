@@ -1,3 +1,15 @@
+function Education({ state }) {
+	let cards = state.education.cards;
+	return cards.map((i, index) => {
+		return (
+			<div key={index} className="card">
+				<h2>Education: {i.name}</h2>
+				<p>Degree: {i.degree}</p>
+			</div>
+		);
+	});
+}
+
 export function FullCV({ state }) {
 	return (
 		<>

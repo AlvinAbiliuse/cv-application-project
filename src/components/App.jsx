@@ -10,18 +10,6 @@ import {Education} from "./Education.jsx";
 import {Experience} from "./Experience.jsx";
 */
 
-function Education({ state }) {
-	let cards = state.education.cards;
-	return cards.map((i, index) => {
-		return (
-			<div key={index} className="card">
-				<h2>Education: {i.name}</h2>
-				<p>Degree: {i.degree}</p>
-			</div>
-		);
-	});
-}
-
 function App() {
 	let [state, setState] = useState(JSON.parse(JSON.stringify(example)));
 
