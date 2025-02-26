@@ -4,7 +4,7 @@ export function Personal({ state, setState }) {
 		let target = e.target.id;
 		let targetValue = e.target.value;
 
-		let tempState = state;
+		let tempState = { ...state };
 		tempState[parentNode][target] = targetValue;
 		console.log(tempState);
 		setState(tempState);
@@ -19,7 +19,12 @@ export function Personal({ state, setState }) {
 			<div className="personal cardContents">
 				<div>
 					<label htmlFor="name">Full Name</label>
-					<input type="text" id="name" value={state["personal"]["name"]} />
+					<input
+						onChange={valueChange}
+						type="text"
+						id="name"
+						value={state["personal"]["name"]}
+					/>
 				</div>
 				<div>
 					<label htmlFor="email">Email</label>
