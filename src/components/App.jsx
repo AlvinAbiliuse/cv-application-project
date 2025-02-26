@@ -29,7 +29,23 @@ const example = {
 			{ name: "university of earth", degree: "masters of bachelorhood" },
 		],
 	},
-	experience: { show: true },
+	experience: {
+		show: true,
+		cards: [
+			{ name: "the tarot company", duration: "1 year", position: "intern" },
+			{
+				name: "the tarot company",
+				duration: "2 years",
+				position: "full time employee",
+			},
+			{
+				name: "the magic factory",
+				duration: "3 years",
+				position: "regional manager",
+			},
+			{ name: "Jarod Tarot evil Inc.", duration: "5 years", position: "CEO" },
+		],
+	},
 };
 
 function Education({ state }) {
