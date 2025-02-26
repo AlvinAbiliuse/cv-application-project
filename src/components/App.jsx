@@ -34,9 +34,9 @@ const example = {
 
 function Education({ state }) {
 	let cards = state.education.cards;
-	return cards.map((i) => {
+	return cards.map((i, index) => {
 		return (
-			<div className="card">
+			<div key={index} className="card">
 				<h2>Education: {i.name}</h2>
 				<p>Degree: {i.degree}</p>
 			</div>
