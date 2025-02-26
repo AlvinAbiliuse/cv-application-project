@@ -44,6 +44,7 @@ export function Personal({ state, setState }) {
 						}}
 						type="text"
 						id="name"
+						value={state["personal"]["name"]}
 					/>
 				</div>
 				<div>
@@ -54,7 +55,7 @@ export function Personal({ state, setState }) {
 						}}
 						type="email"
 						id="email"
-						value={state.personal.email}
+						value={state["personal"]["email"]}
 					/>
 				</div>
 				<div>
@@ -65,7 +66,7 @@ export function Personal({ state, setState }) {
 						}}
 						type="tel"
 						id="tel"
-						value={state.personal.tel}
+						value={state["personal"]["tel"]}
 					/>
 				</div>
 			</div>

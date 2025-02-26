@@ -10,9 +10,9 @@ import {FullCV} from "./FullCV.jsx";
 
 function App() {
 	let [state, setState] = useState({
-		personal: { show: true, name: null, email: "", tel: "" },
-		education: { show: true, "": { duration: "", degree: "" } },
-		experience: { show: true, "": { duration: "", position: "" } },
+		personal: { show: true },
+		education: { show: true },
+		experience: { show: true },
 	});
 
 	return (
@@ -20,7 +20,11 @@ function App() {
 			<div className="left">
 				<Personal state={state} setState={setState} />
 			</div>
-			<div className="right">Bye</div>
+			<div className="right">
+				<p>Name: {state.personal.name}</p>
+				<p>Email: {state.personal.email}</p>
+				<p>Phone Number: {state.personal.tel}</p>
+			</div>
 		</>
 	);
 }
