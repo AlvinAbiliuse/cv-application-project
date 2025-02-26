@@ -1,18 +1,19 @@
 function Education({ state, check }) {
-	let cards = state.education.cards;
 	if (check) {
+		let cards = state.education.cards;
 		return cards.map((i, index) => {
 			return (
-				<div key={index} className="card">
+				<div key={index} className="innerCard card">
 					<h2>Education: {i.name}</h2>
 					<p>Degree: {i.degree}</p>
 				</div>
 			);
 		});
 	} else {
+		let cards = state.experience.cards;
 		return cards.map((i, index) => {
 			return (
-				<div key={index} className="card">
+				<div key={index} className="innerCard card">
 					<h2>Company: {i.name}</h2>
 					<p>Duration: {i.duration}</p>
 					<p>Position: {i.position}</p>
@@ -38,6 +39,9 @@ export function FullCV({ state }) {
 			</div>
 			<div className="educationDisplay">
 				<Education state={state} check={true} />
+			</div>
+			<div className="experienceDisplay">
+				<Education state={state} check={false} />
 			</div>
 		</>
 	);
