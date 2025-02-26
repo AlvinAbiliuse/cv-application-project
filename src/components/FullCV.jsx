@@ -1,4 +1,4 @@
-export default function FullCV({ state }) {
+export function FullCV({ state }) {
 	return (
 		<>
 			<div className="personalDisplay">

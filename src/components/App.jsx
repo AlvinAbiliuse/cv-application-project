@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Personal } from "./Personal.jsx";
 import { baseState, example } from "./baseData.js";
+import { FullCV } from "./FullCV.jsx";
 import "../styles/index.css";
 
 import "../styles/leftStyles.css";
 /*
 import {Education} from "./Education.jsx";
 import {Experience} from "./Experience.jsx";
-import {FullCV} from "./FullCV.jsx";
 */
 
 function Education({ state }) {
@@ -46,20 +46,7 @@ function App() {
 				<Personal state={state} setState={setState} />
 			</div>
 			<div className="right">
-				<div className="personalDisplay">
-					<p>
-						Name: <span>{state.personal.name}</span>
-					</p>
-					<p>
-						Email: <span>{state.personal.email}</span>
-					</p>
-					<p>
-						Phone Number: <span>{state.personal.tel}</span>
-					</p>
-				</div>
-				<div className="educationDisplay">
-					<Education state={state} />
-				</div>
+				<FullCV state={state} />
 			</div>
 		</>
 	);
