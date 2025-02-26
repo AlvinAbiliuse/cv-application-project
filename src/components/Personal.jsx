@@ -44,7 +44,6 @@ export function Personal({ state, setState }) {
 						}}
 						type="text"
 						id="name"
-						value={state["personal"]["name"]}
 					/>
 				</div>
 				<div>
