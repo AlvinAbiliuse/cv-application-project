@@ -1,10 +1,10 @@
-const baseState = {
+export const baseState = {
 	personal: { show: true, name: "", email: "", tel: "" },
 	education: { show: true, cards: [{ name: "", degree: "" }] },
 	experience: { show: true, cards: [{ name: "", duration: "", position: "" }] },
 };
 
-const example = {
+export const example = {
 	personal: {
 		show: true,
 		name: "Jarod Tarot",
