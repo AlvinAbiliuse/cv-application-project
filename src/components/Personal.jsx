@@ -1,15 +1,15 @@
+function valueChange(e, state, setState) {
+	let parentNode = e.target.parentNode.parentNode.classList[0];
+	let target = e.target.id;
+	let targetValue = e.target.value;
+
+	let tempState = { ...state };
+	tempState[parentNode][target] = targetValue;
+	console.log(tempState);
+	setState(tempState);
+}
+
 export function Personal({ state, setState }) {
-	function valueChange(e) {
-		let parentNode = e.target.parentNode.parentNode.classList[0];
-		let target = e.target.id;
-		let targetValue = e.target.value;
-
-		let tempState = { ...state };
-		tempState[parentNode][target] = targetValue;
-		console.log(tempState);
-		setState(tempState);
-	}
-
 	return (
 		<div className="card">
 			<div className="cardHeader">
@@ -20,7 +20,7 @@ export function Personal({ state, setState }) {
 				<div>
 					<label htmlFor="name">Full Name</label>
 					<input
-						onChange={valueChange}
+						onChange={(e) => valueChange(e, state, setState)}
 						type="text"
 						id="name"
 						value={state["personal"]["name"]}
@@ -29,7 +29,7 @@ export function Personal({ state, setState }) {
 				<div>
 					<label htmlFor="email">Email</label>
 					<input
-						onChange={valueChange}
+						onChange={(e) => valueChange(e, state, setState)}
 						type="email"
 						id="email"
 						value={state["personal"]["email"]}
@@ -38,7 +38,7 @@ export function Personal({ state, setState }) {
 				<div>
 					<label htmlFor="number">Phone Number</label>
 					<input
-						onChange={valueChange}
+						onChange={(e) => valueChange(e, state, setState)}
 						type="tel"
 						id="tel"
 						value={state["personal"]["tel"]}
