@@ -39,12 +39,12 @@ export function Personal({ state, setState }) {
 				<div>
 					<label htmlFor="name">Full Name</label>
 					<input
-						onChange={(e) => {
-							valueChange(e, state, setState);
-						}}
 						type="text"
 						id="name"
 						value={state["personal"]["name"]}
+						onChange={(e) => {
+							valueChange(e, state, setState);
+						}}
 					/>
 				</div>
 				<div>

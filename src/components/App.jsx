@@ -10,7 +10,7 @@ import {FullCV} from "./FullCV.jsx";
 
 function App() {
 	let [state, setState] = useState({
-		personal: { show: true },
+		personal: { show: true, name: "", email: "", tel: "" },
 		education: { show: true },
 		experience: { show: true },
 	});
