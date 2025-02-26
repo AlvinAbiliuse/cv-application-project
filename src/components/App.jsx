@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Personal } from "./Personal.jsx";
+import "../styles/index.css";
 
 import "../styles/leftStyles.css";
 /*
