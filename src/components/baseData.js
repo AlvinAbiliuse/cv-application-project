@@ -1,7 +1,11 @@
 export const baseState = {
 	personal: { show: true, name: "", email: "", tel: "" },
 	education: { show: true, cards: [{ name: "", degree: "" }] },
-	experience: { show: true, cards: [{ name: "", duration: "", position: "" }] },
+	experience: {
+		id: crypto.randomUUID(),
+		show: true,
+		cards: [{ name: "", duration: "", position: "" }],
+	},
 };
 
 export const example = {
@@ -14,20 +18,35 @@ export const example = {
 	education: {
 		show: true,
 		cards: [
-			{ name: "u of u", degree: "bachelors of bachelorhood" },
-			{ name: "university of earth", degree: "masters of bachelorhood" },
+			{
+				id: crypto.randomUUID(),
+				name: "u of u",
+				degree: "bachelors of bachelorhood",
+			},
+			{
+				id: crypto.randomUUID(),
+				name: "university of earth",
+				degree: "masters of bachelorhood",
+			},
 		],
 	},
 	experience: {
 		show: true,
 		cards: [
-			{ name: "the tarot company", duration: "1 year", position: "intern" },
 			{
+				id: crypto.randomUUID(),
+				name: "the tarot company",
+				duration: "1 year",
+				position: "intern",
+			},
+			{
+				id: crypto.randomUUID(),
 				name: "the tarot company",
 				duration: "2 years",
 				position: "full time employee",
 			},
 			{
+				id: crypto.randomUUID(),
 				name: "the magic factory",
 				duration: "3 years",
 				position: "regional manager",
