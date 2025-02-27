@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Personal } from "./Personal.jsx";
 import { baseState, example } from "./baseData.js";
 import { FullCV } from "./FullCV.jsx";
+import { Education } from "./Education.jsx";
 import "../styles/index.css";
 
 import "../styles/leftStyles.css";
 /*
-import {Education} from "./Education.jsx";
 import {Experience} from "./Experience.jsx";
 */
 
@@ -32,6 +32,7 @@ function App() {
 					Load Example
 				</button>
 				<Personal state={state} setState={setState} />
+				<Education state={state} setState={setState} />
 			</div>
 			<div className="right">
 				<FullCV state={state} />
