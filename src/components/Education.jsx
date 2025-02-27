@@ -1,4 +1,6 @@
-function UpdateState({ state, setState, e }) {}
+function UpdateState({ state, setState, e }) {
+	console.log(e);
+}
 
 function addCard(state, setState) {
 	let temp = JSON.parse(JSON.stringify(state));
@@ -11,9 +13,18 @@ function Cards({ state, setState }) {
 	console.log(card);
 	return card.map((e, index) => {
 		return (
-			<div className="card">
-				<label htmlfor={"name" + index}>Education:</label>
-				<input type="text" key={e.id} value={e.name} />
+			<div key={e.id} className="card">
+				<div>
+					<div>
+						<label htmlFor={"name" + index}>Education:</label>
+						<input type="text" value={e.name} id={"name" + index} />
+					</div>
+					<div>
+						<label htmlFor={"degree" + index}>Degree:</label>
+						<input type="text" value={e.degree} id={"degree" + index} />
+					</div>
+				</div>
+				<button className="remove">Remove</button>
 			</div>
 		);
 	});
