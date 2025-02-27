@@ -1,5 +1,12 @@
-function updateState({ state, setState, e }) {
-	console.log(e);
+function updateState(e, state, setState) {
+	console.log(e.target.value);
+	console.log(e.target);
+	let tempState = JSON.parse(JSON.stringify(state));
+	console.log(tempState);
+	let tempData = e.target.id.split("-");
+	console.log(tempData);
+	tempState["education"]["cards"][tempData[1]][tempData[0]] = e.target.value;
+	setState(tempState);
 }
 
 function addCard(state, setState) {
@@ -16,21 +23,21 @@ function Cards({ state, setState }) {
 			<div key={e.id} className="card">
 				<div>
 					<div>
-						<label htmlFor={"name" + index}>Education:</label>
+						<label htmlFor={"name-" + index}>Education:</label>
 						<input
-							onChange={(e) => updateState(state, setState, e)}
+							onChange={(e) => updateState(e, state, setState)}
 							type="text"
 							value={e.name}
-							id={"name" + index}
+							id={"name-" + index}
 						/>
 					</div>
 					<div>
-						<label htmlFor={"degree" + index}>Degree:</label>
+						<label htmlFor={"degree-" + index}>Degree:</label>
 						<input
-							onChange={(e) => updateState(state, setState, e)}
+							onChange={(e) => updateState(e, state, setState)}
 							type="text"
 							value={e.degree}
-							id={"degree" + index}
+							id={"degree-" + index}
 						/>
 					</div>
 				</div>
