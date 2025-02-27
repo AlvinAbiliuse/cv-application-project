@@ -44,13 +44,11 @@ function Cards({ state, setState }) {
 
 export function Education({ state, setState }) {
 	return (
-		<>
-			<div className="card">
-				<Cards state={state} setState={setState} />
-				<button onClick={() => addCard(state, setState)} type="button">
-					Add Item
-				</button>
-			</div>
-		</>
+		<div className="card">
+			<Cards state={state} setState={setState} />
+			<button onClick={() => addCard(state, setState)} type="button">
+				Add Item
+			</button>
+		</div>
 	);
 }
