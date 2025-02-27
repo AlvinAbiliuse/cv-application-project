@@ -1,4 +1,4 @@
-function UpdateState({ state, setState, e }) {
+function updateState({ state, setState, e }) {
 	console.log(e);
 }
 
@@ -17,11 +17,21 @@ function Cards({ state, setState }) {
 				<div>
 					<div>
 						<label htmlFor={"name" + index}>Education:</label>
-						<input type="text" value={e.name} id={"name" + index} />
+						<input
+							onChange={(e) => updateState(state, setState, e)}
+							type="text"
+							value={e.name}
+							id={"name" + index}
+						/>
 					</div>
 					<div>
 						<label htmlFor={"degree" + index}>Degree:</label>
-						<input type="text" value={e.degree} id={"degree" + index} />
+						<input
+							onChange={(e) => updateState(state, setState, e)}
+							type="text"
+							value={e.degree}
+							id={"degree" + index}
+						/>
 					</div>
 				</div>
 				<button className="remove">Remove</button>
