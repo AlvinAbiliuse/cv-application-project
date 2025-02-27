@@ -4,8 +4,12 @@ function Education({ state, check }) {
 		return cards.map((i, index) => {
 			return (
 				<div key={index} className="innerCard card">
-					<h2>Education: {i.name}</h2>
-					<p>Degree: {i.degree}</p>
+					<h2>
+						Education:<span className={"cardHeader"}> {i.name}</span>
+					</h2>
+					<p>
+						Degree: <span className={"cardItem"}>{i.degree}</span>
+					</p>
 				</div>
 			);
 		});
@@ -14,9 +18,15 @@ function Education({ state, check }) {
 		return cards.map((i, index) => {
 			return (
 				<div key={index} className="innerCard card">
-					<h2>Company: {i.name}</h2>
-					<p>Duration: {i.duration}</p>
-					<p>Position: {i.position}</p>
+					<h2>
+						Company: <span className={"cardHeader"}>{i.name}</span>
+					</h2>
+					<p>
+						Duration: <span className={"cardItem"}>{i.duration}</span>
+					</p>
+					<p>
+						Position: <span className={"cardItem"}>{i.position}</span>
+					</p>
 				</div>
 			);
 		});
@@ -27,14 +37,14 @@ export function FullCV({ state }) {
 	return (
 		<>
 			<div className="personalDisplay">
+				<h2>
+					Name: <span className={"cardHeader"}>{state.personal.name}</span>
+				</h2>
 				<p>
-					Name: <span>{state.personal.name}</span>
+					Email: <span className={"cardItem"}>{state.personal.email}</span>
 				</p>
 				<p>
-					Email: <span>{state.personal.email}</span>
-				</p>
-				<p>
-					Phone Number: <span>{state.personal.tel}</span>
+					Phone Number: <span className={"cardItem"}>{state.personal.tel}</span>
 				</p>
 			</div>
 			<div className="educationDisplay">
