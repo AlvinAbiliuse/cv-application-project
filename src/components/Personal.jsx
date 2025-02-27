@@ -22,6 +22,7 @@ export function Personal({ state, setState }) {
 						onChange={(e) => valueChange(e, state, setState)}
 						type="text"
 						id="name"
+						name="name"
 						value={state["personal"]["name"]}
 					/>
 				</div>
@@ -31,15 +32,17 @@ export function Personal({ state, setState }) {
 						onChange={(e) => valueChange(e, state, setState)}
 						type="email"
 						id="email"
+						name="email"
 						value={state["personal"]["email"]}
 					/>
 				</div>
 				<div>
-					<label htmlFor="number">Phone Number</label>
+					<label htmlFor="tel">Phone Number</label>
 					<input
 						onChange={(e) => valueChange(e, state, setState)}
 						type="tel"
 						id="tel"
+						name="tel"
 						value={state["personal"]["tel"]}
 					/>
 				</div>
