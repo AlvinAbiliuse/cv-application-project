@@ -51,7 +51,12 @@ export const example = {
 				duration: "3 years",
 				position: "regional manager",
 			},
-			{ name: "Jarod Tarot evil Inc.", duration: "5 years", position: "CEO" },
+			{
+				id: crypto.randomUUID(),
+				name: "Jarod Tarot evil Inc.",
+				duration: "5 years",
+				position: "CEO",
+			},
 		],
 	},
 };

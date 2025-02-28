@@ -1,8 +1,10 @@
 import { updateState } from "./updateState.js";
+import { removeCard } from "./removeCard.js";
 
 function Cards({ state, setState }) {
 	let card = state["experience"]["cards"];
 	return card.map((e, index) => {
+		console.log(e);
 		return (
 			<div key={e.id} className="card">
 				<div>
@@ -34,7 +36,12 @@ function Cards({ state, setState }) {
 						/>
 					</div>
 				</div>
-				<button className="remove">Remove</button>
+				<button
+					onClick={() => removeCard(index, state, setState, "experience")}
+					className="remove"
+				>
+					Remove
+				</button>
 			</div>
 		);
 	});
