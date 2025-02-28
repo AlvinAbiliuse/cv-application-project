@@ -1,17 +1,13 @@
 function updateState(e, state, setState) {
-	console.log(e);
-	/*
 	let tempState = JSON.parse(JSON.stringify(state));
 	let tempData = e.target.id.split("-");
-	tempState["education"]["cards"][tempData[1]][tempData[0]] = e.target.value;
+	tempState["experience"]["cards"][tempData[1]][tempData[0]] = e.target.value;
 	setState(tempState);
-	*/
 }
 
 function Cards({ state, setState }) {
 	let card = state["experience"]["cards"];
 	return card.map((e, index) => {
-		console.log(e);
 		return (
 			<div key={e.id} className="card">
 				<div>
