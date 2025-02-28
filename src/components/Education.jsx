@@ -1,9 +1,4 @@
-function updateState(e, state, setState) {
-	let tempState = JSON.parse(JSON.stringify(state));
-	let tempData = e.target.id.split("-");
-	tempState["education"]["cards"][tempData[1]][tempData[0]] = e.target.value;
-	setState(tempState);
-}
+import { updateState } from "./updateState.js";
 
 function addCard(state, setState) {
 	let temp = JSON.parse(JSON.stringify(state));
@@ -20,7 +15,7 @@ function Cards({ state, setState }) {
 					<div>
 						<label htmlFor={"name-" + index}>Education:</label>
 						<input
-							onChange={(e) => updateState(e, state, setState)}
+							onChange={(e) => updateState(e, state, setState, "education")}
 							type="text"
 							value={e.name}
 							id={"name-" + index}
@@ -29,7 +24,7 @@ function Cards({ state, setState }) {
 					<div>
 						<label htmlFor={"degree-" + index}>Degree:</label>
 						<input
-							onChange={(e) => updateState(e, state, setState)}
+							onChange={(e) => updateState(e, state, setState, "education")}
 							type="text"
 							value={e.degree}
 							id={"degree-" + index}
