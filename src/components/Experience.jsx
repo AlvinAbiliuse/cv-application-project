@@ -1,7 +1,7 @@
-function updateState(e, state, setState) {
+function updateState(e, state, setState, current) {
 	let tempState = JSON.parse(JSON.stringify(state));
 	let tempData = e.target.id.split("-");
-	tempState["experience"]["cards"][tempData[1]][tempData[0]] = e.target.value;
+	tempState[current]["cards"][tempData[1]][tempData[0]] = e.target.value;
 	setState(tempState);
 }
 
@@ -14,7 +14,7 @@ function Cards({ state, setState }) {
 					<div>
 						<label htmlFor={"name-" + index}>Company: </label>
 						<input
-							onChange={(e) => updateState(e, state, setState)}
+							onChange={(e) => updateState(e, state, setState, "experience")}
 							type="text"
 							id={"name-" + index}
 							value={e.name}
@@ -23,7 +23,7 @@ function Cards({ state, setState }) {
 					<div>
 						<label htmlFor={"duration-" + index}>Duration: </label>
 						<input
-							onChange={(e) => updateState(e, state, setState)}
+							onChange={(e) => updateState(e, state, setState, "experience")}
 							type="text"
 							id={"duration-" + index}
 							value={e.duration}
@@ -32,7 +32,7 @@ function Cards({ state, setState }) {
 					<div>
 						<label htmlFor={"position-" + index}>Position: </label>
 						<input
-							onChange={(e) => updateState(e, state, setState)}
+							onChange={(e) => updateState(e, state, setState, "experience")}
 							type="text"
 							id={"position-" + index}
 							value={e.position}
