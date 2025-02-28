@@ -1,8 +1,11 @@
 function updateState(e, state, setState) {
+	console.log(e);
+	/*
 	let tempState = JSON.parse(JSON.stringify(state));
 	let tempData = e.target.id.split("-");
 	tempState["education"]["cards"][tempData[1]][tempData[0]] = e.target.value;
 	setState(tempState);
+	*/
 }
 
 function Cards({ state, setState }) {
@@ -10,11 +13,16 @@ function Cards({ state, setState }) {
 	return card.map((e, index) => {
 		console.log(e);
 		return (
-			<div key={e["id"]} className="card">
+			<div key={e.id} className="card">
 				<div>
 					<div>
 						<label htmlFor={"name-" + index}>Company: </label>
-						<input type="text" id={"name-" + index} value={e.name} />
+						<input
+							onChange={(e) => updateState(e, state, setState)}
+							type="text"
+							id={"name-" + index}
+							value={e.name}
+						/>
 					</div>
 					<div>
 						<label htmlFor={"duration-" + index}>Duration: </label>
