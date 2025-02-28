@@ -10,12 +10,12 @@ function valueChange(e, state, setState) {
 
 export function Personal({ state, setState }) {
 	return (
-		<div className="card">
+		<div className="cardContainer">
 			<div className="cardHeader">
 				<h2>Personal Details</h2>
 				<button> + </button>
 			</div>
-			<div className="personal cardContents">
+			<div className="card cardContents">
 				<div>
 					<label htmlFor="name">Full Name</label>
 					<input
