@@ -1,9 +1,4 @@
-function updateState(e, state, setState, current) {
-	let tempState = JSON.parse(JSON.stringify(state));
-	let tempData = e.target.id.split("-");
-	tempState[current]["cards"][tempData[1]][tempData[0]] = e.target.value;
-	setState(tempState);
-}
+import { updateState } from "./updateState.js";
 
 function Cards({ state, setState }) {
 	let card = state["experience"]["cards"];
