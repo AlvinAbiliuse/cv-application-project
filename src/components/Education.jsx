@@ -1,5 +1,5 @@
 import { updateState } from "./updateState.js";
-
+import { removeCard } from "./removeCard.js";
 function addCard(state, setState) {
 	let temp = JSON.parse(JSON.stringify(state));
 	temp.education.cards.push({ id: crypto.randomUUID(), name: "", degree: "" });
@@ -31,7 +31,12 @@ function Cards({ state, setState }) {
 						/>
 					</div>
 				</div>
-				<button className="remove">Remove</button>
+				<button
+					onClick={() => removeCard(index, state, setState, "education")}
+					className="remove"
+				>
+					Remove
+				</button>
 			</div>
 		);
 	});
