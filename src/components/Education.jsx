@@ -1,5 +1,6 @@
 import { updateState } from "./updateState.js";
 import { removeCard } from "./removeCard.js";
+
 function addCard(state, setState) {
 	let temp = JSON.parse(JSON.stringify(state));
 	temp.education.cards.push({ id: crypto.randomUUID(), name: "", degree: "" });

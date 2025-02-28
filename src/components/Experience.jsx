@@ -1,6 +1,17 @@
 import { updateState } from "./updateState.js";
 import { removeCard } from "./removeCard.js";
 
+function addCards(state, setState) {
+	let data = JSON.parse(JSON.stringify(state));
+	data.experience.cards.push({
+		id: crypto.randomUUID(),
+		name: "",
+		duration: "",
+		position: "",
+	});
+	setState(data);
+}
+
 function Cards({ state, setState }) {
 	let card = state["experience"]["cards"];
 	return card.map((e, index) => {
@@ -51,7 +62,7 @@ export function Experience({ state, setState }) {
 	return (
 		<div className="card">
 			<Cards state={state} setState={setState} />
-			<button>Add Item</button>
+			<button onClick={() => addCards(state, setState)}>Add Item</button>
 		</div>
 	);
 }
