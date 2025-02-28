@@ -15,7 +15,6 @@ function addCards(state, setState) {
 function Cards({ state, setState }) {
 	let card = state["experience"]["cards"];
 	return card.map((e, index) => {
-		console.log(e);
 		return (
 			<div key={e.id} className="cardContents">
 				<div>

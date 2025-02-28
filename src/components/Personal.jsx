@@ -1,10 +1,8 @@
 function valueChange(e, state, setState) {
-	let parentNode = e.target.parentNode.parentNode.classList[0];
 	let target = e.target.id;
 	let targetValue = e.target.value;
-
-	let tempState = { ...state };
-	tempState[parentNode][target] = targetValue;
+	let tempState = JSON.parse(JSON.stringify(state));
+	tempState["personal"][target] = targetValue;
 	setState(tempState);
 }
 

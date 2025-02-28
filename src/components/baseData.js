@@ -1,10 +1,25 @@
 export const baseState = {
 	personal: { show: true, name: "", email: "", tel: "" },
-	education: { show: true, cards: [{ name: "", degree: "" }] },
-	experience: {
-		id: crypto.randomUUID(),
+	education: {
 		show: true,
-		cards: [{ name: "", duration: "", position: "" }],
+		cards: [
+			{
+				id: crypto.randomUUID(),
+				name: "",
+				degree: "",
+			},
+		],
+	},
+	experience: {
+		show: true,
+		cards: [
+			{
+				id: crypto.randomUUID(),
+				name: "",
+				duration: "",
+				position: "",
+			},
+		],
 	},
 };
 
