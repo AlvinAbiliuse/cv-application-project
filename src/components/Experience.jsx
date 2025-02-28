@@ -17,7 +17,7 @@ function Cards({ state, setState }) {
 	return card.map((e, index) => {
 		console.log(e);
 		return (
-			<div key={e.id} className="card">
+			<div key={e.id} className="cardContents">
 				<div>
 					<div>
 						<label htmlFor={"name-" + index}>Company: </label>

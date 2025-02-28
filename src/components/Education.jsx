@@ -11,7 +11,7 @@ function Cards({ state, setState }) {
 	let card = JSON.parse(JSON.stringify(state.education.cards));
 	return card.map((e, index) => {
 		return (
-			<div key={e.id} className="card">
+			<div key={e.id} className="cardContents">
 				<div>
 					<div>
 						<label htmlFor={"name-" + index}>Education:</label>

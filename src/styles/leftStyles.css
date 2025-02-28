@@ -1,5 +1,5 @@
-
-.card {
+.card,
+.cardContents {
 	border: 1px solid black;
 }
 
