@@ -1,6 +1,5 @@
-.card,
 .cardContents {
-	border: 1px solid black;
+	border: 1px solid pink;
 }
 
 .cardHeader {
